@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>Agrotoxicos</title>
+</head>
+<body>
+    <nav class="nav nav-3">
+        <a class="nav-logo" href="/">Ministerio do Meio Ambiente</a>
+            <ul class="nav-list">
+                {%if user.nivel_acesso == 2 %}
+                <li>
+                    <a href="{% url 'acessoniveldois' %}">
+                        <button class="nav-btn">Acesso Nivel 2</button>
+                    </a>
+                </li>
+                {%endif%}
+                {%if user.nivel_acesso == 3%}
+                <li>
+                    <a href="{% url 'acessoniveldois' %}">
+                        <button class="nav-btn">Acesso Nivel 2</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'acessoniveltres' %}">
+                        <button class="nav-btn">Acesso Nivel 3</button>
+                    </a>
+                </li>
+                {%endif%}
+            </ul>
+        <div class="containerNavBar__buttons">
+            <h1 class="usuarioLogado">{{user.nome_usuario}}</h1>
+        </div>
+    </nav>
+    <div class="containerAgrotoxico__main">
+        <div class="containerAgrotoxico__containerTitleGrid">
+            <div class="containerAgrotoxico__containerTitleGrid__columnOne">
+                <h1 class="containerAgrotoxico__title">Agrotóxicos</h1>
+            </div>
+            <div class="containerAgrotoxico__containerTitleGrid__columnTwo">
+                <p class="containerAgrotoxico__descritionAgrotoxico">Os agrotóxicos, defensivos agrícolas, 
+                    pesticidas ou agroquímicos, são substâncias químicas sintéticas utilizadas para matar pragas, insetos, 
+                    bactérias, fungos e outras plantas.<br/>
+                    O uso desses produtos na agricultura se torna muito importante visto que impedem danos nas plantações. 
+                    Porém, é importante destacar que eles são tóxicos e venenosos.</p>
+            </div>
+        </div>
+        <div class="containerTiposAgrotoxicos__containerGrid">
+            <div class="containerTiposAgrotoxicos__containerColumn">
+                <h1 class="containerAgrotoxico__title">Tipos de Agrotóxicos</h1>
+            </div>
+            <div class="containerTiposAgrotoxicos__containerColumnTwo">
+                <div class="containerTiposAgrotoxicos__containerColumnTwo__containerGrid">
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Inseticidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados para controlar os insetos e pragas das plantações. 
+                            Exemplos: fosfato de alumínio e arsenato de cálcio.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Herbicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Utilizados para matar as plantas que são consideradas danosas para as plantações. 
+                            Exemplos: arsenito de sódio e cloreto de sódio.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Furmigantes</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usadas para controlar as bactérias do solo que podem afetar as plantações. 
+                            Exemplos: brometo de metila e cloropicrina.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Acaricidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados para controlar os ácaros. 
+                            Exemplos: Dicofol e Tetradifon.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Nematicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Utilizados para controlar nematoides. 
+                            Exemplos: Diclofention e Fensulfotion.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Formicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados no combate às formigas. 
+                            Exemplos: Citromax e Maldrex.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerClassificacaoAgrotoxicos__containerGrid">
+            <div class="containerClassificacaoAgrotoxicos__containerColumnOne">
+                <h1 class="containerAgrotoxico__title">Classificação dos agrotóxicos</h1>
+            </div>
+            <div class="containerClassificacaoAgrotoxicos__containerColumnTwo">
+                <div class="containerClassificacaoAgrotoxicos__ExtremamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">I</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">EXTREMAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__AltamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">II</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">ALTAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__MedianamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">III</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text text_medianamente"> MEDIANAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__PoucoToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">IV</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">POUCO TÓXICO</h1>
+                </div>
+            </div>
+        </div>
+        <div class="containerBrasilRank">
+            <img class="imagemEuropa" src="{% static 'img/imageEuropa.png' %}" alt="Imagem Europa">
+            <h1 class="containerBrasilRank__title">Brasil é 2º maior comprador de agrotóxicos proibidos na Europa</h1>
+            <p class="containerBrasilRank__descricao">Europa exporta agrotóxicos que proíbe para uso interno e importa 
+                alimentos cultivados com estes químicos em outras regiões. A prática transfere para países como o Brasil os 
+                riscos que estes produtos oferecem à saúde dos trabalhadores e ao ambiente</p>
+        </div>
+        <div class="containerDadosIneditos">
+            <h3 class="containerDadosIneditos__info">Dados inéditos revelam que o Brasil é um dos maiores compradores de agrotóxicos 
+                fabricados em solo europeu, mas proibidos para uso na União Europeia e Inglaterra. 
+                A prática já era conhecida, mas pela primeira vez se revela a importância do Brasil neste mercado. 
+                Foram 10 mil toneladas em 2018, e 12 mil em 2019. Mais da metade (77%) saiu da fábrica da 
+                Syngenta na Inglaterra, onde a empresa produz o agrotóxico paraquate.G</h3>
+        </div>
+        <div class="buttonAcessoNivelDois">
+            <ul class="nav-list itemButton">
+                <li>
+                    <a href="#">
+                        <button class="buttonNivelAcessoPage">Acesso Nivel 2</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="containerAcessoNivelDois semAcesso">
+            <div class="containerImpactosDosAgrotoxicos">
+                <div class="containerImpactosDosAgrotoxicos__columOne">
+                    <h1 class="containerImpactosDosAgrotoxicos__title">Impactos de agrotoxicos no meio ambiente</h1>
+                </div>
+                <div class="containerImpactosDosAgrotoxicos__columTwo">
+                    <p class="containerImpactosDosAgrotoxicos__titleDescricao">Maior parte dos agrotóxicos não atinge a praga alvo, 
+                        contamina as águas subterrâneas e superficiais e traz graves riscos à saúde
+                    </p>
+                    <p class="containerImpactosDosAgrotoxicos__infoDescricao">A utilização de agrotóxicos é a 2ª maior causa de 
+                        contaminação dos rios no Brasil, perdendo apenas para o esgoto doméstico, segundo dados do IBGE. 
+                        Considerando que a agricultura é o setor que mais consome água doce no Brasil, cerca de 70%, 
+                        segundo o Fundo das Nações Unidas para Agricultura e Alimentação (FAO), pode-se dizer que além 
+                        de sérios problemas para a saúde, os agrotóxicos também se transformaram em um grave problema 
+                        ambiental no país.
+                    </p>
+                    <p class="containerImpactosDosAgrotoxicos__infoDescricao">Hoje o Brasil é o maior consumidor de agrotóxico do mundo, 
+                        embora não seja o maior produtor. Atualmente o Brasil utiliza 19% de todo defensivo 
+                        agrícola produzido no planeta, segundo a Agência Nacional de Vigilância Sanitária (Anvisa). 
+                        Além disso, mais de 99% dos venenos aplicados na lavoura não atingem a praga alvo. Então, 
+                        pode-se dizer que mais de 99% dos agrotóxicos vão para os rios,mares, para o solo, para o ar e 
+                        para os lençois freaticos.A água poluída com agrotóxicos irá prejudicar diretamente a fauna e a 
+                        flora aquática. A contaminação das águas pelos agrotóxicos tem efeito direto nos seres 
+                        vivos que vivem na água, a biota de um modo geral. Se o veneno que chega nas águas for o 
+                        herbicida, o efeito é direto e pode, por exemplo, matar as plantas aquáticas. Se o rio for 
+                        contaminado por um veneno que mata animais, pode ocorrer a morte de algumas espécies de peixes menores.
+                        Ao serem carregados pelas águas superficiais, os agrotóxicos passam a fazer parte do do ciclo 
+                        natural da natureza. Quando se trata de água corrente, o veneno vai fazer parte de um ciclo e
+                        um dia vai chegar ao oceano. Ainda hoje, análises nas geleiras polares mostram que naquele gelo 
+                        existe DDT, um veneno proibido há muitos anos. Isso é pra se ter uma ideia do processo: saiu da 
+                        lavoura através da chuva, passou pelos rios e mar e através das correntes marítimas, chegou às geleiras.
+                        </p>
+                </div>
+            </div>
+            <div class="containerInfoLista">
+                <p class="containerInfoLista__text">Na lista de “proibidos no exterior e ainda em uso no Brasil” estão 
+                    Tricolfon, Cihexatina, Abamectina, Acefato, Carbofuran, Fosmete, Lactofen, Parationa Metílica e Thiram.
+                </p>
+            </div>
+            <div class="containerTiposAgrotoxicos__containerGrid">
+                <div class="containerTiposAgrotoxicos__containerColumn">
+                    <h1 class="containerAgrotoxico__title titleNivelDois">Agrotoxicos proibidos no mundo e usados no Brasil.</h1>
+                </div>
+                <div class="containerTiposAgrotoxicos__containerColumnTwo">
+                    <div class="containerTiposAgrotoxicos__containerGridNivelDois">
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Cihexatina</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">utilizada na fabricação de sete agrotóxicos, 
+                                registrados principalmente para a citricultura, o agrotóxico podia ser aplicado nas culturas de 
+                                maçã, morango, pêssego, café e berinjela.
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Abamectin</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">O Abamectin Nortox é indicado como acaricida e 
+                                inseticida nas culturas do algodão, batata, café, citros, côco, crisântemo, 
+                                feijão, maçã, mamão, melancia, ...
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Acefato</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">O acefato é um inseticida e acaricida organofosforado 
+                                usado no controle de insetos em plantações, como algodão e tabaco, em frutas, em hortaliças e em 
+                                plantas ornamentais. Também é utilizado no controle de insetos domésticos, como formigas e ácaros.
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Carbofuran</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">Carbofuran é um pesticida carbamato, amplamente 
+                                utilizado para controlar insetos em uma ampla variedade de culturas agrícolas, 
+                                incluindo batata, milho e soja.
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Fosmete</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">é um inseticida organofosforado não sistêmico 
+                                derivado de ftalimida usado em plantas e animais. É usado principalmente em 
+                                macieiras para controle de traças, embora também seja usado em uma ampla variedade de 
+                                frutíferas, ornamentais e videiras para o controle de pulgões, otários, ácaros e moscas da fruta.
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Parationa</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">paratião é um pesticida agrícola, pertecente 
+                                ao grupo dos organofosforados, sendo um potente inseticida e acaricida.
+                            </p>
+                        </div>
+                        <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                            <h1 class="containerTiposAgrotoxicos__titleCard">Lactofen</h1>
+                            <p class="containerTiposAgrotoxicos__infosCard">Herbicida e Fungicida
+                                É utilizado em aplicações pós-emergência em certas culturas resistentes à sua ação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="containerInfoNivelDois">
+                <h3 class="infoNivelDoisFooter">Em 2019 o Brasil teve a maior quantidade de agrotoxicos 
+                    classificados nos niveis mais altos 
+                    de toxicidade e periculosiade 32,8% sao <span class="extremamenteToxicosText">extremamente toxicos</span> ou 
+                    <span class="altamenteToxicosText"> altamente toxicos</span> 52% sao <span class="extremamenteToxicosText">altamente perigosos ao meio ambiente</span> ou <span class="altamenteToxicosText">muito perigosos</span></h3>
+            </div>
+        </div>
+        <div class="buttonAcessoNivelDois">
+            <ul class="nav-list itemButton">
+                <li>
+                    <a href="#">
+                        <button class="buttonNivelAcessoPage">Acesso Nivel 3</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="containerAcessoNivelTres semAcesso">
+            <h1 class="titleCenariosRegionais">Cenários regionais de contaminação ambiental por agrotóxicos</h1>
+            <p class="infoCenarioRegionais">Como grande parte dos agrotóxicos aplicados no solo e na 
+                planta tende a se deslocar principalmente para as águas superficiais e subterrâneas, 
+                como também para a atmosfera, os estudos se concentraram nos dois primeiros compartimentos, 
+                com a geração de diversas publicações. As investigações, no entanto, não têm identificado 
+                cenários de contaminação no ambiente agrícola, mas somente a presença dos agrotóxicos e 
+                nitrato em concentrações muito baixas ou até mesmo ausentes. Muitos fatores concorrem para 
+                a dissipação de agrotóxicos no ambiente, levando à mineralização completa da molécula ou 
+                gerando outros produtos como metabólitos e produtos de degradação.
+            </p>
+            <h1 class="regiaoSudeste">Região Sudeste</h1>
+            <p class="infoRegiaoSudeste">Nesta região como em todas as demais do país, existem informações limitadas sobre a presença de agrotóxicos nos solos, nas águas superficiais e subterrâneas (aquíferos). Os relatos mais antigos referem-se aos compostos organoclorados, facilmente detectáveis em função da meia vida longa aliada à simplicidade (moléculas menos complexas) de sua composição química. Assim é que, os produtos hoje encontrados (1,2,3,4,5,6,-hexaclorociclohexano - BHC , DicloroDifenil-Tricloroetano - DDT e Aldrin), tanto no solo quanto na água subterrânea, são resultantes das aplicações sucessivas na cafeicultura durante as décadas de 50, 60 e 70. Os estados de São Paulo, Minas Gerais e Paraná são os que mais apresentam casos de ocorrência de organoclorados, em função da predominância da cultura do café nestas regiões no período em que o uso dos organoclorados ainda era permitido (CORBI et al., 2006; PERES; MOREIRA, 2007; FLORES, 2000). No entanto, alguns estudos indicam o uso indevido de tais produtos atualmente, principalmente nas áreas cultivadas com cana-deaçúcar.
+                No entanto compostos organoclorados como o DDT, BHC e Lindano ainda são usados na região Serrana do Rio de Janeiro, principalmente em olerícolas, contrariando a legislação atual relativa ao uso de agrotóxicos.
+                No caso do estado de São Paulo, estudos realizados por Corbi et al. (2006) em sedimentos de 11 córregos da região central, em áreas com cultivo de cana-de-açúcar, pastagem e mata ciliar, com abrangência dos municípios de São Carlos, Araraquara, Ribeirão Bonito, Ibaté, Dourado e Américo Brasiliense, identificaram a presença de 16 organoclorados. Entre tais produtos, destacaram-se Aldrin, BHC, Endrin, DDT, Endossulfan I, Endossulfan II e Sulfato. O Aldrin esteve presente no sedimento de todos os córregos e em altas concentrações, de acordo com os valores de referência do Conselho Nacional Do Meio Ambiente (2009).
+                Em relação ao estado de Minas Gerais, um estudo realizado por Flores (2000) e Flores et al. (2004), na cidade de Viçosa, interior de Minas Gerais, revelou a presença dos organoclorados BHC e DDT em sedimentos do Ribeirão São Bartolomeu. Nas amostras de águas, deste mesmo ribeirão, encontrou-se a presença de Heptacloro epóxido, Endrin e DDT. Os organoclorados encontrados nas águas haviam sido detectados anteriormente em outro estudo, neste mesmo local, porém em níveis superiores àqueles permitidos no Brasil, principalmente no solo, com variação de valores entre 10 e 19 µg kg-1 (CHAGAS et al., 1999). Para os produtos Hexaclorociclohexano total (HCH), DDT, DDD e DDE totais, por exemplo, a Companhia de Saneamento do Estado de São Paulo - CETESB adota o valor de 9 µg kg-1, considerado como Nível de Máximo Risco Aceitável (NMRC) para o compartimento solo, de acordo com recomendações da Holanda (COMPANHIA DE TECNOLOGIA DE SANEAMENTO AMBIENTAL, 2002).
+                Na água subterrânea, principalmente em aquíferos, conhece-se mais sobre a ocorrência de pesticidas a partir de um estudo na região de Ribeirão Preto/SP. Nesse município, uma pesquisa realizada para identificação de determinados herbicidas, principalmente dos grupos 14 Panorama da Contaminação Ambiental por Agrotóxicos e Nitrato de origem Agrícola no Brasil: cenário 1992/2011 das triazinas e das amino-ureias, seguida da avaliação de risco em uma microbacia (Córrego Espraiado) de uso intensivo com cana-deaçúcar, mostrou que alguns deles podem comprometer a qualidade da água subterrânea por apresentarem elevado potencial de lixiviação até o lençol freático, e especialmente quando aplicados em solos arenoso
+                Na região norte, por exemplo, os riscos de contaminação da água subterrânea concentram-se, principalmente, na porção nordeste do Pará, onde a monocultura de soja avança sobre todos os tipos de solos, principalmente na região de Paragominas. Este cenário coloca o Aquífero Itapecuru (livre), representativo da região, em situação de alerta, uma vez que as condições atuais de ocupação e manejo do solo indicam possíveis interferências, com alterações nesse manancial subterrâneo, tanto sob o aspecto qualitativo como também quantitativo. Ainda no estado do Pará, existe um cenário preocupante na região de Igarapé-Açu, especificamente na Bacia Hidrográfica do Igarapé Cumaru, onde se utiliza uma carga expressiva de agrotóxicos sem controle, vários deles com alto potencial de lixiviação e de transformação em compostos mais tóxicos do que as moléculas originais. Trabalhos realizados por Lima (2003), na região de Igarapé-Açu, por exemplo, indicaram que o inseticida/acaricida dimetoato pode chegar ao lençol freático e comprometer a qualidade de água do aquífero freático do Grupo Barreiras.
+            </p>
+            <h1 class="regiaoSul">Região Sul</h1>
+            <p class="infoRegiaoSul">No estado do Rio Grande do Sul, estudos realizados por Mattos et al. (2002) têm mostrado a presença de glifosato em lavouras de arroz irrigado com água proveniente da Lagoa Mirim em concentrações acima de 7 µg L-1, que é o valor máximo permitido pela Agência de Proteção Ambiental Americana (USEPA). Outras regiões orizícolas da região sul também têm apresentado resíduos de agrotóxicos em seus mananciais.
+                Mattos et al. (2011) ao realizarem estudos de monitoramento de agrotóxicos em áreas piloto da produção integrada de arroz irrigado na planície costeira externa e fronteira oeste do Rio Grande do Sul, no período 2007/2008, encontraram resíduos de 3 hidroxicarbofurano, clomazona, cialofope butílico, 2,4-D, azoxistrobina, bentazona, difenoconazol, edifenfós, etoxissulfurom, fipronil, glifosato, imazetapir, mancozebe, oxadiazona, oxifluorfen, penoxsulam, propanil, tebuconazol, tetraconazol, tiabendazol, tiobencarbe. Destes, onze pertencem à classe de herbicida, dois à de inseticida e sete à de fungicida. Glifosato e 2,4-D foram detectados em concentrações inferiores aos limites estabelecidos pelo CONAMA. Ainda, de acordo com os mesmos autores, resíduo do herbicida 2,4-D também foi detectado em uma área piloto (AP) da Produção Integrada de Arroz (PIA), localizada na Fronteira Oeste do Rio Grande do Sul na safra agrícola de 2006/2007, na concentração de 0,001 mg kg-1 de solo. A adsorção do 2,4-D é mais forte em solos argilosos e ricos em matéria orgânica, característica do solo da AP onde a amostra foi coletada (MATTOS et al., 2007).
+                Silva et al. (2009) detectaram resíduos de diversos agrotóxicos nos períodos após a drenagem das lavouras, indicando que esta técnica deve ser aperfeiçoada a fim de evitar a contaminação dos corpos d´água que recebem a água da lavoura.
+                Para Silva et al. (2011), em todas as regiões orizícolas do Sul do Brasil verifica-se a presença de ao menos um agrotóxico ocorrente em águas subterrâneas. Fipronil é o agrotóxico detectado em maior número de amostras, seguido de imazetapir, clomazone, imazapique e quincloraque. Os agrotóxicos penoxsulam, carbofurano, 3-hidroxicarbofuran e tebuconazole não foram detectados neste estudo. Apenas as concentrações de fipronil ultrapassaram os limites de potabilidade proposto pela Comunidade Europeia, ocorrendo em 27% das amostras de águas subterrâneas. As concentrações dos agrotóxicos detectadas em águas subterrâneas são baixas, sendo necessário realizar trabalhos de análise de risco ambiental desses agrotóxicos nesses níveis de contaminação. Segundo, ainda, os mesmos autores, nas regiões da Planície Costeira Interna à Laguna dos Patos e Santa Catarina podese averiguar que a totalidade das amostras monitoradas continha a presença de ao menos um agrotóxico; as regiões da Fronteira Oeste, Depressão Central e Planície Costeira Externa à Laguna dos Patos apresentaram 89% das amostras contaminadas com agrotóxicos, e as regiões da Campanha e Sul do Rio Grande do Sul apresentaram 78 e 63%, respectivamente, das amostras contaminadas com, ao menos, um agrotóxico.
+                É importante salientar que para muitas moléculas detectadas nos estudos mencionados ainda não existem valores de referência na legislação brasileira para níveis aceitáveis, seja para potabilidade, seja para manutenção da qualidade da água de acordo com o 20 Panorama da Contaminação Ambiental por Agrotóxicos e Nitrato de origem Agrícola no Brasil: cenário 1992/2011 enquadramento dos corpos de água. Desta forma, não é possível estabelecer com clareza um panorama da qualidade dos recursos hídricos, uma vez que os efeitos deletérios causados por pesticidas à saúde humana e ao meio ambiente são dependentes das concentrações observadas em cada um dos compartimentos ambientais.
+                Além disso, estudos de monitoramento conseguem avaliar apenas uma proporção muito pequena da diversidade de cenários gerados a partir da combinação do meio ambiente e agricultura.
+            </p>
+            <h1 class="regiaoNorte">Região Norte/Nordeste</h1>
+            <p class="infoRegiaoSul">Na região amazônica, o comprometimento da qualidade da água, de uma forma global, está diretamente relacionado à possibilidade do avanço da agricultura com uso mais intensivo de agroquímicos, principalmente na cultura da soja. Ainda não existem estudos ou qualquer tipo de monitoramento que evidenciem uma situação preocupante na região. Todavia, a pesquisa agropecuária necessita atuar de forma mais pragmática no sentido de se posicionar frente aos avanços da fronteira agrícola na região, apresentando propostas de uso mais racional, com equilíbrios ambiental, econômico e social.
+                Na região norte, por exemplo, os riscos de contaminação da água subterrânea concentram-se, principalmente, na porção nordeste do Pará, onde a monocultura de soja avança sobre todos os tipos de solos, principalmente na região de Paragominas. Este cenário coloca o Aquífero Itapecuru (livre), representativo da região, em situação de alerta, uma vez que as condições atuais de ocupação e manejo do solo indicam possíveis interferências, com alterações nesse manancial subterrâneo, tanto sob o aspecto qualitativo como também quantitativo. Ainda no estado do Pará, existe um cenário preocupante na região de Igarapé-Açu, especificamente na Bacia Hidrográfica do Igarapé Cumaru, onde se utiliza uma carga expressiva de agrotóxicos sem controle, vários deles com alto potencial de lixiviação e de transformação em compostos mais tóxicos do que as moléculas originais. Trabalhos realizados por Lima (2003), na região de Igarapé-Açu, por exemplo, indicaram que o inseticida/acaricida dimetoato pode chegar ao lençol freático e comprometer a qualidade de água do aquífero freático do Grupo Barreiras.
+                Na região do médio rio Guamá, envolvendo a bacia do rio Capitão Pocinho, Araújo et al. (2011) observaram que os pesticidas como a Atrazina, Glifosato, Diuron, Hexazinona, 2,4-D, Etiona, Fenpropatrina, Difenoconazole, Triclofon, Clorpinifos, Bifentrina, Diazinona, Metidationa, dentre outros classificados como altamente tóxicos, são aplicados em valores variáveis. Nesta área, a citricultura está sendo desenvolvida há cerca de uma década e meia.
+                Na região nordeste o cenário torna-se ainda mais crítico, principalmente devido ao uso intensivo, envolvendo sistemas de produção de frutas para exportação. Toda a região do Vale do Submédio Rio São Francisco está sob esse sistema, com a utilização de pivôs de irrigação. Um sistema como esse, com atuação por tempo prolongado, sem maiores controles da qualidade e quantidade de água usada, pode favorecer o aparecimento de dois problemas básicos: a) diminuição da disponibilidade de água do rio para outros fins mais nobres, e, b) salinização/contaminação do solo, afetando sensivelmente a produtividade e a água do lençol freático, que é muito raso em toda região.
+                Outra região que merece atenção particular é a de ocorrência dos aquíferos Serra Grande (predominantemente confinado) e Poti-Piauí (livre). O primeiro apresenta um cenário de alerta quanto ao aspecto quantitativo, uma vez que se tem observado desperdício de água em toda a região sul do Piauí. Do ponto de vista qualitativo, a salinidade, por enquanto, é o maior problema, principalmente na região de ocorrência de suas áreas de recarga, situadas a leste/sudeste do Estado, especialmente na região de Picos (EMBRAPA MEIO AMBIENTE, 2003). No caso do segundo aquífero, tipicamente freático ou livre, o cenário envolve aspectos qualitativos e quantitativos. Sob o aspecto qualitativo, existe uma situação de risco, dada a presença de intensa atividade de fruticultura, principalmente manga e limão que requerem quantidade considerável de insumos.
+                Na Bahia, o cenário mais crítico está relacionado ao Aquífero Urucuia, região oeste do Estado. Com a expansão das atividades agrícolas, principalmente soja e algodão, vários municípios tiveram um crescimento acima da média do Estado e, com isso, o crescimento do consumo de água, não só para abastecimento urbano, mas também para as lavouras irrigadas; estas, muitas vezes com utilização de água subterrânea. Estudos realizados por Pimentel et al. (2000), mostraram que a recarga líquida do Aquífero Urucuia pelas águas das chuvas na região é de apenas 20%, cerca de 258,5 mm/ano. O estudo teve por base a obtenção de histogramas no período de 1984 a 1995. Com o desmatamento e plantio de grãos, a recarga do Aquífero Urucuia tende a diminuir, afetando não só a sua reserva, mas também o volume da água de diversos cursos d’água, já que muitos deles dependem do próprio aquífero em questão. Praticamente, todos os afluentes da margem esquerda do Rio São Francisco, tendo o Rio Grande como principal tributário, dependem do armazenamento de água nos arenitos da Formação Urucuia (Aquífero Urucuia) associados às rochas pelíticas fraturadas do Grupo Bambui.
+                Do ponto de vista qualitativo, existe uma situação de risco de contaminação, uma vez que o cultivo intensivo de grãos, o qual exige alta entrada de insumos, ocorre em área de recarga do Aquífero Urucuia.
+            </p>
+            <h1 class="regiaoCentroOeste">Região Centro-Oeste</h1>
+            <p class="infoRegiaoSul">Com relação às águas subterrâneas na região Centro-Oeste foram consideradas três áreas que, a princípio, apresentaram cenários mais críticos em relação a uma possível situação de risco de contaminação do lençol freático.
+                A primeira delas refere-se às porções de recarga do Aquífero Guarani no chamado Domínio Pedomorfoagroclimático das Nascentes do Araguaia, conforme Gomes et al. (2002), Gomes et al. (2006) e Gomes et al. (2008). Estudos realizados na região no período 1999-2001 mostraram que existe uma forte pressão de ocupação agrícola das áreas de recarga, principalmente pelas culturas de soja e milho, cujos solos são bastante arenosos.
+                A segunda região, localizada no estado do Mato Grosso, apresentou uma redução entre 40 e 50% dos teores de matéria orgânica dos solos cultivados em relação aos solos virgens, devido ao uso e manejo do solo ao longo de 12 anos nas nascentes do rio Paraguai (Alto Pantanal). Ao mesmo tempo, tais áreas foram submetidas a cultivos intensivos com exigências, tanto de adubos e fertilizantes quanto de agrotóxicos. Este cenário mostra uma situação de risco para o lençol freático, uma vez que a matéria orgânica atua como “tampão” ou mecanismo de retenção de compostos químicos (RIEDER et al., 2000). Além do risco de contaminação das águas subterrâneas, esta região também apresenta risco à contaminação das águas superficiais. Diferentes ingredientes ativos têm sido detectados nas amostras de Panorama da Contaminação Ambiental por Agrotóxicos e Nitrato de origem Agrícola no Brasil: 25 cenário 1992/2011 água da região nordeste da bacia do Pantanal (LAABS et al., 2002). A maioria das amostras apresentou concentrações de agrotóxicos abaixo dos limites estabelecidos pela Comunidade Europeia e Estados Unidos (USEPA); porém, deve-se destacar que os mananciais das áreas agrícolas desta região são drenados para a região do Pantanal, onde também já foram detectados resíduos de agrotóxicos em suas águas. As concentrações observadas são consideradas baixas, mas como o bioma é extremamente frágil, estudos adicionais devem ser conduzidos para assegurar a integridade biótica da região.
+                A terceira região localiza-se na porção leste do estado de Mato Grosso, onde Dores et al. (2001) verificaram o potencial de contaminação de águas superficiais e subterrâneas numa área agrícola em Primavera do Leste, a partir do levantamento e análise de parâmetros físicos e químicos do solo e de 29 agrotóxicos, demonstrando o risco potencial que cada composto estudado apresentava naquele ambiente. No grupo avaliado, os agrotóxicos metomil, triadimefon atrazina, metribuzin, simazina, clorimuron-etílico, imazetapir, flumetsulam, fomezafen, glifosato e metolaclor apresentaram maior mobilidade pelo índice de GUS – índice de lixiviação de pesticidas proposto por Gustafson (1989). Esta informação reforça a necessidade da implantação de programas de monitoramento de agrotóxicos em solo e água, uma vez que constantemente são identificados cenários com risco de contaminação destes compartimentos.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

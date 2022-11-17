@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="nav nav-3">
+        <a class="nav-logo" href="/">Ministerio do Meio Ambiente</a>
+        <div class="containerNavBar__buttons">
+            <a href="{% url 'login' %}">
+                <button class="nav-btn">Login</button>
+            </a>
+        </div>
+    </nav>
+    <div class="containerAgrotoxico__main">
+        <div class="containerAgrotoxico__containerTitleGrid">
+            <div class="containerAgrotoxico__containerTitleGrid__columnOne">
+                <h1 class="containerAgrotoxico__title">Agrotóxicos</h1>
+            </div>
+            <div class="containerAgrotoxico__containerTitleGrid__columnTwo">
+                <p class="containerAgrotoxico__descritionAgrotoxico">Os agrotóxicos, defensivos agrícolas, 
+                    pesticidas ou agroquímicos, são substâncias químicas sintéticas utilizadas para matar pragas, insetos, 
+                    bactérias, fungos e outras plantas.<br/>
+                    O uso desses produtos na agricultura se torna muito importante visto que impedem danos nas plantações. 
+                    Porém, é importante destacar que eles são tóxicos e venenosos.</p>
+            </div>
+        </div>
+        <div class="containerTiposAgrotoxicos__containerGrid">
+            <div class="containerTiposAgrotoxicos__containerColumn">
+                <h1 class="containerAgrotoxico__title">Tipos de Agrotóxicos</h1>
+            </div>
+            <div class="containerTiposAgrotoxicos__containerColumnTwo">
+                <div class="containerTiposAgrotoxicos__containerColumnTwo__containerGrid">
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Inseticidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados para controlar os insetos e pragas das plantações. 
+                            Exemplos: fosfato de alumínio e arsenato de cálcio.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Herbicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Utilizados para matar as plantas que são consideradas danosas para as plantações. 
+                            Exemplos: arsenito de sódio e cloreto de sódio.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Furmigantes</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usadas para controlar as bactérias do solo que podem afetar as plantações. 
+                            Exemplos: brometo de metila e cloropicrina.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Acaricidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados para controlar os ácaros. 
+                            Exemplos: Dicofol e Tetradifon.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Nematicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Utilizados para controlar nematoides. 
+                            Exemplos: Diclofention e Fensulfotion.
+                        </p>
+                    </div>
+                    <div class="containerTiposAgrotoxicos__containerColumnDetails">
+                        <h1 class="containerTiposAgrotoxicos__titleCard">Formicidas</h1>
+                        <p class="containerTiposAgrotoxicos__infosCard">Usados no combate às formigas. 
+                            Exemplos: Citromax e Maldrex.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerClassificacaoAgrotoxicos__containerGrid">
+            <div class="containerClassificacaoAgrotoxicos__containerColumnOne">
+                <h1 class="containerAgrotoxico__title">Classificação dos agrotóxicos</h1>
+            </div>
+            <div class="containerClassificacaoAgrotoxicos__containerColumnTwo">
+                <div class="containerClassificacaoAgrotoxicos__ExtremamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">I</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">EXTREMAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__AltamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">II</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">ALTAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__MedianamenteToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">III</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text text_medianamente"> MEDIANAMENTE TÓXICO</h1>
+                </div>
+                <div class="containerClassificacaoAgrotoxicos__PoucoToxicos">
+                    <h1 class="containerClassificacaoAgrotoxicos__InfoNumero">IV</h1>
+                    <h1 class="containerClassificacaoAgrotoxicos__Text">POUCO TÓXICO</h1>
+                </div>
+            </div>
+        </div>
+        <div class="containerBrasilRank">
+            <img class="imagemEuropa" src="{% static 'img/imageEuropa.png' %}" alt="Imagem Europa">
+            <h1 class="containerBrasilRank__title">Brasil é 2º maior comprador de agrotóxicos proibidos na Europa</h1>
+            <p class="containerBrasilRank__descricao">Europa exporta agrotóxicos que proíbe para uso interno e importa 
+                alimentos cultivados com estes químicos em outras regiões. A prática transfere para países como o Brasil os 
+                riscos que estes produtos oferecem à saúde dos trabalhadores e ao ambiente</p>
+        </div>
+        <div class="containerDadosIneditos">
+            <h3 class="containerDadosIneditos__info">Dados inéditos revelam que o Brasil é um dos maiores compradores de agrotóxicos 
+                fabricados em solo europeu, mas proibidos para uso na União Europeia e Inglaterra. 
+                A prática já era conhecida, mas pela primeira vez se revela a importância do Brasil neste mercado. 
+                Foram 10 mil toneladas em 2018, e 12 mil em 2019. Mais da metade (77%) saiu da fábrica da 
+                Syngenta na Inglaterra, onde a empresa produz o agrotóxico paraquate.G</h3>
+        </div>
+    </div>
+</body>
+</html>
